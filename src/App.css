@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #efedde;
+  --text-primary: #000000;
+  --text-secondary: #72716a;
+  --text-accent: #dab12a;
+
+  --primary-color-dark: #0f172a;
+  --text-primary-dark: #e2e8f0;
+  --text-secondary-dark: #818fa3;
+  --text-accent-dark: #7ae8c7;
+
+  --text-drops: #d4d3c8;
+  --text-drops-dark: #253969;
+
+  --glow-color: #fffcec;
+  --glow-color-dark: #1c196b;
+}
+
+.App {
+  background-color: var(--primary-color);
+  color: var(--text-primary);
+}
+
+.dark .App {  /* Apply dark styles to the entire app */
+  background-color: var(--primary-color-dark);
+  color: var(--text-primary-dark);
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+.dark .text-primary {
+  color: var(--text-primary-dark);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.dark .text-secondary {
+  color: var(--text-secondary-dark);
+}
+
+.text-accent {
+  color: var(--text-accent);
+}
+
+.dark .text-accent {
+  color: var(--text-accent-dark);
+}
+
+.drops {
+  color: var(--text-drops);
+}
+
+.dark .drops {
+  color: var(--text-drops-dark);
+}
+
+.icon {
+  color: var(--text-primary);
+}
+
+.icon-hover:hover {
+  color: var(--text-secondary);
+}
+
+.dark .icon {
+  color: var(--text-primary-dark);
+}
+
+.dark .icon-hover:hover {
+  color: var(--text-secondary-dark);
+}
+
+strong{
+  color: var(--text-primary);
+}
+
+.dark strong{
+  color: var(--text-primary-dark);
+}

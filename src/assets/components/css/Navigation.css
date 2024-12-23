@@ -1,0 +1,31 @@
+.nav-selected {
+    color: var(--text-primary);
+}
+
+.nav-deselected{
+    color: var(--text-secondary);
+}
+
+.nav-line-selected{
+    background-color: var(--text-primary);
+}
+
+.nav-line-deselected{
+    background-color: var(--text-secondary);
+}
+
+.dark .nav-selected {
+    color: var(--text-primary-dark);
+}
+
+.dark .nav-deselected{
+    color: var(--text-secondary-dark);
+}
+
+.dark .nav-line-selected{
+    background-color: var(--text-primary-dark);
+}
+
+.dark .nav-line-deselected{
+    background-color: var(--text-secondary-dark);
+}

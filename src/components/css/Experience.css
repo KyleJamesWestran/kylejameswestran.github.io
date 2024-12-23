@@ -1,0 +1,25 @@
+.experience-panel:hover {
+    background-color: rgba(var(--glow-color-rgb), 0.5);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.dark .experience-panel:hover {
+    background-color: rgba(var(--glow-color-dark-rgb), 0.5);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.experience-panel:hover .experience-title {
+    color: var(--text-accent) !important;
+}
+
+.dark .experience-panel:hover .experience-title {
+    color: var(--text-accent-dark) !important;
+}
+
+.experience-tag{
+    background-color: rgba(var(--accent-rgb), 0.1)
+}
+
+.dark .experience-tag{
+    background-color: rgba(var(--accent-dark-rgb), 0.1)
+}
