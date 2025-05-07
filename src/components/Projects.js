@@ -22,6 +22,7 @@ const Projects = () => {
       images: [
         { src: "/images/DIMS_1.png", description: "Route Optimization" },
         { src: "/images/DIMS_2.png", description: "Customer Special" },
+        { src: "/images/userManual.pdf", description: "Customer Special" },
       ],
       tags: ["PHP", "Laravel", "SQL", "JQuery", "Dev Extreme", "AI", "Automation"],
     },
@@ -32,7 +33,6 @@ const Projects = () => {
 
   const handleExpand = (projectId) => {
     if (expandedProject === projectId) {
-      // Trigger collapse
       setExpandedProject(null);
     } else {
       setExpandedProject(projectId);
@@ -48,20 +48,23 @@ const Projects = () => {
     setCurrentSlide((prev) => (prev - 1 + imagesLength) % imagesLength);
   };
 
+  // Handle double-click to open image in a new tab
+  const handleImageDoubleClick = (src) => {
+    window.open(src, "_blank"); // Open the image in a new tab
+  };
+
   return (
     <div id="PROJECTS" className="default-content text-secondary text-base pt-20 pb-20">
       <div className="space-y-8">
         {projectData.map((project, index) => (
-          <div
-            key={index}
-            className="flex flex-col p-4 rounded-lg project-panel"
-          >
+          <div key={index} className="flex flex-col p-4 rounded-lg project-panel">
             {/* Thumbnail, Title, and Description */}
             <div className="flex items-center gap-6">
               <img
                 src={project.thumbnail}
                 alt={project.title}
                 className="w-32 h-32 object-contain rounded-lg"
+                onDoubleClick={() => handleImageDoubleClick(project.thumbnail)} // Handle double-click on thumbnail
               />
               <div className="flex-1">
                 <h2 className="text-lg font-bold text-primary project-title">{project.title}</h2>
@@ -77,9 +80,7 @@ const Projects = () => {
             {/* Expanded/Collapsed Section */}
             <div
               className={`transition-all duration-500 ease-in-out transform ${
-                expandedProject === index
-                  ? "max-h-[500px] opacity-100 scale-100"
-                  : "max-h-0 opacity-0 scale-95"
+                expandedProject === index ? "max-h-[500px] opacity-100 scale-100" : "max-h-0 opacity-0 scale-95"
               } overflow-hidden`}
             >
               {expandedProject === index && (
@@ -98,6 +99,7 @@ const Projects = () => {
                               ? "translate-x-full"
                               : "-translate-x-full"
                           }`}
+                          onDoubleClick={() => handleImageDoubleClick(image.src)} // Handle double-click on image
                         />
                       ))}
                     </div>

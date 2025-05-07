@@ -15,10 +15,11 @@ const Navigation = ({ scrollToSection }) => {
     const sections = ["ABOUT", "EXPERIENCE", "PROJECTS"];
     sections.forEach((section) => {
       const sectionElement = document.getElementById(section.toLowerCase());
-      const rect = sectionElement.getBoundingClientRect();
-      // Check if the section is in the viewport
-      if (rect.top <= 0 && rect.bottom >= 0) {
-        setSelected(section); // Set selected item based on the visible section
+      if (sectionElement) {
+        const rect = sectionElement.getBoundingClientRect();
+        if (rect.top <= 0 && rect.bottom >= 0) {
+          setSelected(section);
+        }
       }
     });
   };

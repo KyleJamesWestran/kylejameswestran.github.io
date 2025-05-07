@@ -5,26 +5,26 @@ const Experience = () => {
   // Declare the data as an array of experience objects
   const experience = [
     {
-      timeframe: "2022 - Present",
-      company: "Linx Systems",
-      title: "Full Stack Software Developer",
-      description: "As a full stack software developer at Linx Systems, I developed, implemented, and managed multiple projects. I delat with clients, managed projects, and provided effective, responsive sales and warehouse managements software.",
-      tags: ["PHP", "Laravel", "C#", "Python", "Machine Learning", "AI", "Flutter"]
+      "timeframe": "2022 - Present",
+      "company": "Linx Systems",
+      "title": "Full Stack Software Developer",
+      "description": "Designing, developing, and managing end-to-end software solutions for diverse clients, including sales and warehouse management systems. Collaborated with clients to understand their needs and deliver responsive, user-focused applications. Spearheaded multiple projects, integrating advanced technologies such as machine learning and AI, while maintaining high standards of performance and scalability.",
+      "tags": ["PHP", "Laravel", "C#", "Python", "Machine Learning", "AI", "Flutter"]
+    },    
+    {
+      "timeframe": "2018 - 2022",
+      "company": "Upwork",
+      "title": "Freelance Software Developer",
+      "description": "Collaborated with diverse clients to design and deliver custom software solutions, focusing on efficiency and scalability. Successfully developed web applications, automated workflows, and created robust web scraping tools. Built user-friendly interfaces and backend systems tailored to client needs, ensuring high-quality results and timely delivery.",
+      "tags": ["Python", "Django", "Web-Scraping", "Automation", "React"]
     },
     {
-      timeframe: "2018 - 2022",
-      company: "Upwork",
-      title: "Freelance Software Developer",
-      description: "Working with clients, providing various software solutions.",
-      tags: ["Python", "Django", "Web-Scraping", "Automation", "React"]
-    },
-    {
-      timeframe: "2017 - 2022",
-      company: "CBM Africa",
-      title: "Draughtsman",
-      description: "Working At CBM Africa, I was responsible for the civil and structural drafting, given engineering specifications. I also helped manage and maintain the companys ICT Related issues.",
-      tags: ["Networking", "Excel", "Server Management", "Web-Scraping"]
-    }
+      "timeframe": "2017 - 2022",
+      "company": "CBM Africa",
+      "title": "Draughtsman",
+      "description": "Oversaw civil and structural drafting projects, translating engineering specifications into accurate and detailed technical drawings. Played a key role in managing and maintaining the company’s ICT infrastructure, resolving technical issues, optimizing network performance, and ensuring seamless server operations.",
+      "tags": ["Networking", "Excel", "Server Management", "Web-Scraping"]
+    }    
   ];
 
   const hexToRgb = (hex) => {

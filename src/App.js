@@ -104,10 +104,16 @@ function App() {
 
           <Experience />
 
-          <Projects />
+          <div id="PROJECTS" className="default-content text-base pt-20 pb-20">
+            <h1 className="text-2xl font-bold">Projects</h1>
+            <h2 className="text-1xl mt-4 font-semibold">In Progress</h2>
+            <p className="text-lg mt-4 text-secondary">
+              2024-12-31 - This section is currently under development and will be available soon. In the meantime, feel free to reach out via the social links provided on the left to request a demo of my work. My portfolio includes web applications, software services, mobile apps, and AI projects.
+            </p>
+          </div>
 
           <p className="text-secondary py-40 pe-20 mb-5">
-            This project was developed by <strong>Kyle Westran</strong>, programmed in <strong>React</strong>, coded in <strong>Visual Studio Code</strong>, and deployed to <strong>github.io</strong> for hosting.
+            This portfolio was designed and developed by <strong>Kyle Westran</strong>. It was built using <strong>React</strong>, coded in <strong>Visual Studio Code</strong>, and deployed on <strong>GitHub Pages</strong>.
           </p>
         </div>
       </div>
