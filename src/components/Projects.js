@@ -123,18 +123,18 @@ const Projects = () => {
             id="PROJECTS"
             className="default-content text-base pt-20 pb-20">
             
-        <h2 className="text-2xl mb-4 font-semibold px-6">What Ive Done</h2>
+            <h2 className="text-2xl mb-4 font-semibold px-6">What Ive Done</h2>
             <div className="space-y-8">
                 {projectData.map((project, index) => (
                     <div key={index} className="flex flex-col p-4 rounded-lg project-panel">
                         {/* Thumbnail, Title, and Description */}
                         <div className="flex items-center gap-6">
                         <img 
-    src={project.thumbnail} 
-    alt={project.title} 
-    className="w-32 h-auto object-cover rounded-2xl cursor-pointer" 
-    onClick={() => handleExpand(index)} 
-/>
+                            src={project.thumbnail} 
+                            alt={project.title} 
+                            className="w-32 h-auto object-cover rounded-2xl cursor-pointer" 
+                            onClick={() => handleExpand(index)} 
+                        />
 
                             <div className="flex-1">
                                 <h2 className="text-lg font-bold text-primary project-title">{project.title}</h2>
@@ -262,7 +262,11 @@ const Projects = () => {
                 </div>
             )}
 
+            
+            <h2 className="text-xl mb-4 font-semibold px-6">MORE PROJECTS WILL BE ADDED BY 2025-05-09</h2>
+
         </div>
+
     );
 };
 
