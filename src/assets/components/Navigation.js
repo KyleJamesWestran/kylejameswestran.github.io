@@ -11,25 +11,35 @@ const Navigation = ({ scrollToSection }) => {
     scrollToSection(item); // Scroll to the corresponding section
   };
 
-  const handleScroll = () => {
-    const sections = ["ABOUT", "EXPERIENCE", "PROJECTS"];
-    sections.forEach((section) => {
-      const sectionElement = document.getElementById(section.toLowerCase());
-      if (sectionElement) {
-        const rect = sectionElement.getBoundingClientRect();
-        if (rect.top <= 0 && rect.bottom >= 0) {
-          setSelected(section);
-        }
-      }
-    });
-  };
-
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
+    const scrollingContainer = document.querySelector('.flex-1.overflow-y-auto.pr-40.z-10');
+    const handleScroll = () => {
+      const sections = ["ABOUT", "EXPERIENCE", "PROJECTS"];
+      let currentSection = null;
+
+      sections.forEach((section) => {
+        const sectionElement = document.getElementById(section);
+        if (sectionElement) {
+          const rect = sectionElement.getBoundingClientRect();
+          const containerRect = scrollingContainer.getBoundingClientRect();
+          if (rect.top < containerRect.height / 2 && rect.bottom > 0) {
+            currentSection = section;
+          }
+        }
+      });
+
+      // If a new section is in view, update the selected section
+      if (currentSection && currentSection !== selected) {
+        setSelected(currentSection); // Update selected to the new section
+      }
     };
-  }, []);
+
+    scrollingContainer.addEventListener('scroll', handleScroll);
+
+    return () => {
+      scrollingContainer.removeEventListener('scroll', handleScroll);
+    };
+  }, [selected]); // Add selected as a dependency so it updates when selected changes
 
   return (
     <div className="flex items-start">

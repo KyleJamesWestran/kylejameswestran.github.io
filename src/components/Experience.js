@@ -47,6 +47,7 @@ const Experience = () => {
 
   return (
     <div id="EXPERIENCE" className="pt-20">
+      <h2 className="text-2xl mb-4 font-semibold px-6">Where Ive Worked</h2>
       {experience.map((experience, index) => (
         <div key={index} className="max-w-4xl mx-auto p-6 rounded-lg mb-6 experience-panel">
           <div className="flex flex-col">
