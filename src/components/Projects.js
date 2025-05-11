@@ -292,7 +292,7 @@ const Projects = () => {
                 </div>
             )}
 
-            <h2 className="text-xl mb-4 font-semibold px-6">MORE PROJECTS WILL BE ADDED BY 2025-05-12</h2>
+            <h2 className="text-xl mb-4 font-semibold px-6">MORE PROJECTS WILL BE ADDED BY 2025-05-13</h2>
 
         </div>
 
