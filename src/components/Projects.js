@@ -81,6 +81,36 @@ const Projects = () => {
                 "Automation",
                 "Tracking"
             ]
+        }, {
+            title: "Forkast",
+            description: "Forkast is a machine learning project designed to analyze historical sales data and generate predictive insights. The system includes multiple models: one predicts the likelihood of a customer placing an order on a given day; another forecasts the probability of a specific product being ordered by a particular customer; and a third estimates the quantity of that product the customer is likely to purchase. These models work together to support demand forecasting and personalized sales strategies.",
+            thumbnail: "/images/Forkast_Thumb.png",
+            images: [
+                {
+                    src: "/images/Forkast_1.jpeg",
+                    title: "Customer Order Probability Model",
+                    description: "Utilizing historical sales data, this model predicts the likelihood of a specific customer placing an order on any given day — achieving a remarkable 99% accuracy rate."
+                },
+                {
+                    src: "/images/Forkast_1.jpeg",
+                    title: "Product Preference Prediction Model",
+                    description: "This model analyzes historical sales data to estimate the probability that a specific customer will order a particular product on a given day, with a predictive accuracy of 97%."
+                },
+                {
+                    src: "/images/Forkast_1.jpeg",
+                    title: "Product Quantity Forecasting Model",
+                    description: "Designed to forecast order volumes, this model predicts the quantity of a specific product a customer is likely to order on any given day. With an average prediction error of just 1.17 units, it delivers exceptional accuracy — especially considering typical order volumes range between 5 and 500 units."
+                }
+            ],
+            tags: [
+                "Python",
+                "Sklearn",
+                "AI",
+                "Machine Learning",
+                "Numpy",
+                "Pandas",
+                "Predictive Models"
+            ]
         }
     ];
 
