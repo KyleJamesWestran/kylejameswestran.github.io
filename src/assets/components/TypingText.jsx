@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 const TypingText = () => {
-  const words = ["NEAT", "SCALABLE", "USER FRIENDLY"];
+  const words = ["NEAT", "SCALABLE", "USER FRIENDLY", "CREATIVE", "IMPACTFUL", "INNOVATIVE"];
   const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
   const [deleting, setDeleting] = useState(false);
