@@ -3,85 +3,59 @@
 @tailwind utilities;
 
 :root {
-  --primary-color: #d4d2c3;
-  --text-primary: #000000;
-  --text-secondary: #72716a;
-  --text-accent: #e69a0d;
-
-  --primary-color-dark: #0a0f1b;
-  --text-primary-dark: #e2e8f0;
-  --text-secondary-dark: #818fa3;
-  --text-accent-dark: #39d4a6;
-
-  --text-drops: #ecebe1;
-  --text-drops-dark: #253969;
-
-  --glow-color: #fffcec;
-  --glow-color-dark: #1c196b;
+  --text-drops: #e1ece9;
 }
 
-.App {
-  background-color: var(--primary-color);
-  color: var(--text-primary);
-}
-
-.dark .App {  /* Apply dark styles to the entire app */
-  background-color: var(--primary-color-dark);
-  color: var(--text-primary-dark);
-}
-
-.text-primary {
-  color: var(--text-primary);
-}
-
-.dark .text-primary {
-  color: var(--text-primary-dark);
-}
-
-.text-secondary {
-  color: var(--text-secondary);
-}
-
-.dark .text-secondary {
-  color: var(--text-secondary-dark);
-}
-
-.text-accent {
-  color: var(--text-accent);
-}
-
-.dark .text-accent {
-  color: var(--text-accent-dark);
+html {
+  scroll-behavior: smooth;
 }
 
 .drops {
   color: var(--text-drops);
 }
 
-.dark .drops {
-  color: var(--text-drops-dark);
+.fancy-font {
+    font-family: "Pattaya", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
-.icon {
-  color: var(--text-primary);
+.outlined-font {
+  font-family: "Tourney", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }
 
-.icon-hover:hover {
-  color: var(--text-secondary);
+.filled-font {
+  font-family: "Tourney", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900; /* Max weight for filled look */
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+  -webkit-text-stroke: 0; /* Ensure no outline is applied */
 }
 
-.dark .icon {
-  color: var(--text-primary-dark);
+.main-font {
+  font-family: "Funnel Display", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
-.dark .icon-hover:hover {
-  color: var(--text-secondary-dark);
+.typewriter-font {
+    font-family: "Courier Prime", monospace;
+    font-style: normal;
+    transform: scaleY(1.15);
+    display: inline-block;
+    position: relative;
+    top: -0.3px;
 }
 
-strong{
-  color: var(--text-primary);
-}
-
-.dark strong{
-  color: var(--text-primary-dark);
+.thin-font {
+  font-family: "Alumni Sans Pinstripe", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }

@@ -1,6 +1,6 @@
 .raindrops-container {
   overflow: hidden;
-  width: 50vw;
+  width: 100vw;
   height: 100vh;
   position: absolute;
   top: 0;
@@ -15,8 +15,8 @@
 
 .drops span{
   position: relative;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   animation: animate 15s linear infinite;
   animation-duration: calc(200s / var(--speed));
 }
