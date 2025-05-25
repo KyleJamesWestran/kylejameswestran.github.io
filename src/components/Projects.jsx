@@ -18,7 +18,7 @@ const projects = [
         icon: <FaRobot />,
         title: "Forkast",
         description:
-            "Forkast is a machine learning platform designed for predictive analytics in sales environments. It provides insights through models that forecast purchasing trends, product demand, and optimal stock quantities. Built with Python and Scikit-learn, the platform incorporates data science tools to support strategic business decisions and improve inventory planning.",
+            "Forkast is a machine learning platform tailored for predictive analytics in sales environments. It delivers actionable insights through advanced models that forecast customer purchasing behavior, product demand, and optimal stock levels. Developed in Python using Scikit-learn and a robust suite of data science tools, Forkast empowers businesses to make smarter inventory decisions and drive strategic growth. The platform features two core models. A classification model that predicts the probability of a customer placing an order on a given day, achieving an impressive 91% accuracy. Secondly a regression model that forecasts the expected order quantity, delivering a high level of precision with a mean absolute error of just 0.2 units.Together, these models support more accurate demand planning, reduce stockouts and overstocking, and help optimize the entire supply chain.",
         links: {
             github: "https://github.com/KyleJamesWestran/Forkast"
         },
