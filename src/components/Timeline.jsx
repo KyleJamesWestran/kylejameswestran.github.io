@@ -14,40 +14,28 @@ const events = [
     {
         date: "Sep '98",
         title: "Birth",
-        details: "I was born on the 15th of September 1998 in the Western Cape, South Africa.",
-        tags: [
-            "Milk", "Nappies", "Sleep"
-        ],
+        details: "I was born in South Africa, where my lifelong curiosity and love for building things first took root.",
+        tags: ["Curiosity", "Roots", "Beginnings"],
         icon: <FaBaby/>,
         personal: 1
     }, {
         date: "Jan '05",
-        title: "Queens College Boys Primary School",
-        details: "Started primary school at the prestigious Queens College Boys Primary School, wh" +
-                "ere I developed early interests in sport, mathematics, and technology.",
-        tags: [
-            "Sport", "Phys Ed", "Maths", "Technology"
-        ],
+        title: "Started Primary School",
+        details: "Began my early education at Queens College Boys Primary, where I first developed a passion for learning—particularly in mathematics, sport, and technology.",
+        tags: ["Learning", "Maths", "Technology", "Sport"],
         icon: <FaSchool/>,
         personal: 1
     }, {
         date: "Jan '12",
-        title: "Queens College Boys High School",
-        details: "Began high school at Queens College Boys High School. My passion for creating an" +
-                "d building things was sparked here, especially through technical drawings and In" +
-                "formation Technology. I remember my first programming test in Delphi where I sco" +
-                "red 100%, and my teacher encouraged others to use my code as the memo.",
-        tags: [
-            "EGD", "IT", "Waterpolo", "Rugby", "Programming"
-        ],
+        title: "High School Foundations",
+        details: "Attended Queens College Boys High School, where my love for software and design deepened. Scoring 100% on my first programming test affirmed I was on the right path.",
+        tags: ["Programming", "Design", "Problem Solving", "Tech"],
         icon: <FaSchool/>,
         personal: 1
     }, {
         date: "Jan '17",
         title: "CBM Africa",
-        details: "Started working as a draughtsman at CBM Africa, initially pursuing a career in e" +
-                "ngineering. Alongside, I developed software solutions to optimize internal proce" +
-                "sses and assisted with networking and ICT support. I soon realised that I was meant to be coding.",
+        details: "Started working as a draughtsman at CBM Africa, initially pursuing a career in engineering. Alongside, I developed software solutions to optimize internal processes and assisted with networking and ICT support. I soon realised that I was meant to be coding.",
         tags: [
             "Draughting",
             "Software Development",
@@ -61,9 +49,7 @@ const events = [
     }, {
         date: "Mar '18",
         title: "Freelance Developer on Upwork",
-        details: "Began freelancing on Upwork, delivering custom software solutions and automation" +
-                " tools for clients across various industries. Projects included web scrapers, ta" +
-                "sk automations, and applications tailored to specific client needs.",
+        details: "Began freelancing on Upwork, delivering custom software solutions and automation tools for clients across various industries. Projects included web scrapers, task automations, and applications tailored to specific client needs.",
         tags: [
             "Python",
             "Django",
@@ -77,9 +63,7 @@ const events = [
     }, {
         date: "Jan '19",
         title: "UNISA - BSc Computing",
-        details: "Started studying part-time for a BSc in Computing at the University of South Afr" +
-                "ica, focusing on programming, AI, database management, and software development " +
-                "lifecycle (SDLC).",
+        details: "Started studying part-time for a BSc in Computing at the University of South Africa, focusing on programming, AI, database management, and software development lifecycle (SDLC).",
         tags: [
             "C++", "Python", "AI", "Oracle DB", "SDLC"
         ],
@@ -88,21 +72,14 @@ const events = [
     }, {
         date: "Jun '19",
         title: "Marriage",
-        details: "Married my wife at 21, marking the beginning of a lifelong partnership ful" +
-                "l of love, growth, and shared dreams.",
-        tags: [
-            "Marriage", "Love", "Commitment", "Future", "Family"
-        ],
+        details: "Married my beautiful wife, an experience that taught me about commitment, communication, and shared purpose.",
+        tags: ["Commitment", "Growth", "Support"],
         icon: <FaFemale/>,
         personal: 1
     }, {
         date: "Oct '22",
         title: "Full-Stack Developer at Linx Systems",
-        details: "Joined Linx Systems as a full-stack developer, creating transformative digital s" +
-                "olutions using PHP Laravel and MS SQL databases to help clients improve sales, w" +
-                "arehouse management, and stock control. Integrated Python machine learning model" +
-                "s for advanced prediction features and developed mobile apps including a seriali" +
-                "zed stock management system.",
+        details: "Joined Linx Systems as a full-stack developer, creating transformative digital solutions using PHP Laravel and MS SQL databases to help clients improve sales, warehouse management, and stock control. Integrated Python machine learning models for advanced prediction features and developed mobile apps including a serialized stock management system.",
         tags: [
             "PHP",
             "Laravel",
@@ -118,20 +95,16 @@ const events = [
     }, {
         date: "Jun '23",
         title: "Parenthood",
-        details: "Welcomed my son into the world, an experience that profoundly changed my" +
-                " life and priorities.",
-        tags: [
-            "Parenting", "Fatherhood", "Family", "Children"
-        ],
+        details: "Welcomed our first child — an inspiring and transformative moment that redefined my priorities and fueled my drive to build a better future.",
+        tags: ["Family", "Parenting", "Growth"],
         icon: <FaChild/>,
         personal: 1
     }, {
         date: "Apr '25",
         title: "Immigration to New Zealand",
-        details: "Immigrated with my family to New Zealand, embarking on a new adventure to create" +
-                " a better future and new opportunities for our son.",
+        details: "Immigrated with my family to New Zealand, embarking on a new adventure to create a better future and new opportunities for our son.",
         tags: [
-            "New Zealand", "Auckland", "Kerikeri", "Adventure", "Family"
+            "New Zealand", "Immigration", "Adventure", "Family"
         ],
         icon: <FaPlane/>,
         personal: 1
