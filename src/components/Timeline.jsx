@@ -159,7 +159,7 @@ const Timeline = () => {
 
             {/* Header with toggle side-by-side */}
             <div className="relative z-10 flex justify-center items-center py-20 gap-6">
-                <h2 className="text-6xl font-bold">TIMELINE</h2>
+                <h2 className="text-6xl font-bold main-font">TIMELINE</h2>
 
                 <div className="flex items-center gap-2">
                     <label htmlFor="toggle" className="font-semibold text-gray-700 select-none">
