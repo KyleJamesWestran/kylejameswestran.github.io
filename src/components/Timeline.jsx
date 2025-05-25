@@ -14,7 +14,7 @@ const events = [
     {
         date: "Sep '98",
         title: "Birth",
-        details: "I was born on the 15th of September 1998 in Somerset West, South Africa.",
+        details: "I was born on the 15th of September 1998 in the Western Cape, South Africa.",
         tags: [
             "Milk", "Nappies", "Sleep"
         ],
@@ -88,7 +88,7 @@ const events = [
     }, {
         date: "Jun '19",
         title: "Marriage",
-        details: "Married my wife Tyler at 21, marking the beginning of a lifelong partnership ful" +
+        details: "Married my wife at 21, marking the beginning of a lifelong partnership ful" +
                 "l of love, growth, and shared dreams.",
         tags: [
             "Marriage", "Love", "Commitment", "Future", "Family"
@@ -118,7 +118,7 @@ const events = [
     }, {
         date: "Jun '23",
         title: "Parenthood",
-        details: "Welcomed my son Malachi into the world, an experience that profoundly changed my" +
+        details: "Welcomed my son into the world, an experience that profoundly changed my" +
                 " life and priorities.",
         tags: [
             "Parenting", "Fatherhood", "Family", "Children"
