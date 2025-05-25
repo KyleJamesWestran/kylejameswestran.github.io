@@ -6,7 +6,8 @@ const projects = [
     {
         icon: <FaClock />,
         title: "Timeframe",
-        description: "Timeframe is a Micro-SaaS project designed to speed up the generation of timetables for schools. Timetable generation can take a school almost up to a month. Timeframe does it in a matter of seconds, saving weeks of time. It was built using pythons FastAPI as a backend hosted on Render, and a react frontend hosted on Vercel",
+        description:
+            "Timeframe is a Micro-SaaS application designed to streamline the creation of school timetables. Traditionally, this process can take up to a month for a single institution. Timeframe leverages algorithmic logic and automation to generate conflict-free timetables in seconds. The backend is built with Python's FastAPI and hosted on Render, while the frontend is developed with React and deployed via Vercel.",
         links: {
             github: "https://github.com/KyleJamesWestran/Timeframe",
             website: "https://timeframe-beta.vercel.app/"
@@ -16,7 +17,8 @@ const projects = [
     {
         icon: <FaRobot />,
         title: "Forkast",
-        description: "A machine learning platform for sales prediction. Models include purchase likelihood, product forecasting, and quantity prediction for accurate sales strategy planning.",
+        description:
+            "Forkast is a machine learning platform designed for predictive analytics in sales environments. It provides insights through models that forecast purchasing trends, product demand, and optimal stock quantities. Built with Python and Scikit-learn, the platform incorporates data science tools to support strategic business decisions and improve inventory planning.",
         links: {
             github: ""
         },
@@ -25,7 +27,8 @@ const projects = [
     {
         icon: <FaComputer />,
         title: "DIMS",
-        description: "DIMS is a web-based ERP integration system. I contributed to improving and creating modules such as Route Optimization, Customer Specials, Purchase Orders, and more, enhancing logistics and warehouse efficiency.",
+        description:
+            "DIMS (Designed Integrated Management System) is a web-based ERP integration platform tailored for logistics and warehouse operations. My contributions included the development and enhancement of key modules such as Route Optimization, Customer Specials, and Purchase Order Management. The system improves operational efficiency and provides robust automation across departments. Technologies used include PHP, Laravel, and SQL, with frontend enhancements through jQuery and DevExtreme, and cloud integration via Azure.",
         links: {
             website: "https://mydimsapp.com/"
         },
@@ -34,11 +37,12 @@ const projects = [
     {
         icon: <FaMobile />,
         title: "iStoreIt",
-        description: "A mobile app for warehouse stock tracking with serialized tracking, QR scanning, and audit trails. Built to operate even offline with full syncing capabilities.",
+        description:
+            "iStoreIt is a mobile inventory management application built for warehouse environments. It supports real-time tracking of serialized stock, QR code scanning, and audit trail functionality. The app is designed to function offline and synchronize with central systems once reconnected, ensuring reliability in low-connectivity settings. Developed using Flutter and Dart, it interfaces seamlessly with backend APIs for robust data integrity and automation.",
         links: {
         },
         tags: ["Flutter", "Dart", "SQL", "APIs", "Mobile", "Automation", "Tracking"]
-    },
+    }
 ];
 
 const Projects = () => {
