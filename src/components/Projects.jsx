@@ -51,7 +51,7 @@ const Projects = () => {
             <h2 className="text-6xl font-bold mb-8 main-font">PROJECTS</h2>
             <div className="flex flex-col gap-8">
                 {projects.map((project, index) => (
-                    <div key={index} className="bg-white border-4 border-gray-100 p-6 flex flex-col">
+                    <div key={index} className="bg-white border-2 border-gray-100 p-6 flex flex-col transition-all duration-300 ease-in-out hover:border-emerald-300">
                         {/* Icon, Title, Description */}
                         <div className="flex mb-4">
                             <div className="text-4xl text-emerald-500 mr-4">
