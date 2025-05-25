@@ -28,7 +28,7 @@ const events = [
     }, {
         date: "Jan '12",
         title: "High School Foundations",
-        details: "Attended Queens College Boys High School, where my love for software and design deepened. Scoring 100% on my first programming test affirmed I was on the right path.",
+        details: "Attended Queens College Boys High School, where my love for software and design deepened. Scoring 100% on my first programming test affirmed I was on the right path. My teacher jokingly told the class to use my work as a memo!",
         tags: ["Programming", "Design", "Problem Solving", "Tech"],
         icon: <FaSchool/>,
         personal: 1
