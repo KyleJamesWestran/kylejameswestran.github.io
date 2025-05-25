@@ -20,7 +20,7 @@ const projects = [
         description:
             "Forkast is a machine learning platform designed for predictive analytics in sales environments. It provides insights through models that forecast purchasing trends, product demand, and optimal stock quantities. Built with Python and Scikit-learn, the platform incorporates data science tools to support strategic business decisions and improve inventory planning.",
         links: {
-            github: ""
+            github: "https://github.com/KyleJamesWestran/Forkast"
         },
         tags: ["Python", "Sklearn", "AI", "Machine Learning", "Numpy", "Pandas", "Predictive Models"]
     },
