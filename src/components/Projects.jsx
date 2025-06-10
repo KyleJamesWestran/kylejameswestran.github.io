@@ -1,19 +1,9 @@
 import React from "react";
-import { FaMobile, FaRobot, FaGlobe, FaGithub, FaClock } from "react-icons/fa";
+import { FaMobile, FaRobot, FaGlobe, FaGithub, FaClock, FaServer } from "react-icons/fa";
 import { FaComputer } from "react-icons/fa6";
 
 const projects = [
-    {
-        icon: <FaClock />,
-        title: "Timeframe",
-        description:
-            "Timeframe is a Micro-SaaS application designed to streamline the creation of school timetables. Traditionally, this process can take up to a month for a single institution. Timeframe leverages algorithmic logic and automation to generate conflict-free timetables in seconds. The backend is built with Python's FastAPI and hosted on Render, while the frontend is developed with React and deployed via Vercel.",
-        links: {
-            github: "https://github.com/KyleJamesWestran/Timeframe",
-            website: "https://timeframe-beta.vercel.app/"
-        },
-        tags: ["Python", "Algorithms", "AI", "React", "Render", "Vercel"]
-    },
+    
     {
         icon: <FaRobot />,
         title: "Forkast",
@@ -23,6 +13,25 @@ const projects = [
             github: "https://github.com/KyleJamesWestran/Forkast"
         },
         tags: ["Python", "Sklearn", "AI", "Machine Learning", "Numpy", "Pandas", "Predictive Models"]
+    },{
+        icon: <FaClock />,
+        title: "Timeframe",
+        description:
+            "Timeframe is a Micro-SaaS application designed to streamline the creation of school timetables. Traditionally, this process can take up to a month for a single institution. Timeframe leverages algorithmic logic and automation to generate conflict-free timetables in seconds. The backend is built with Python's FastAPI and hosted on Render, while the frontend is developed with React and deployed via Vercel.",
+        links: {
+            github: "https://github.com/KyleJamesWestran/Timeframe",
+            website: "https://timeframe-beta.vercel.app/"
+        },
+        tags: ["Python", "Algorithms", "AI", "React", "Render", "Vercel"]
+    },{
+        icon: <FaServer />,
+        title: "Slinky",
+        description:
+            "Slinky is a new project currently under production. When the project is complete, it will be a comprehensive platform designed to create simple, secure, and scalable APIs from data on your local machine. Turning your local data into secure and accessible APIs, Slinky will enable developers to build applications that can interact with local data seamlessly. The platform will feature a user-friendly interface for managing data sources, generating APIs, and ensuring secure access controls. Slinky aims to simplify the process of API creation, making it accessible for developers of all skill levels.",
+        links: {
+            github: "https://github.com/KyleJamesWestran/Slinky",
+        },
+        tags: ["Python", "FastAPI", "React", "Websockets", "Integration", "APIs", "serverless"]
     },
     {
         icon: <FaComputer />,
@@ -42,7 +51,8 @@ const projects = [
         links: {
         },
         tags: ["Flutter", "Dart", "SQL", "APIs", "Mobile", "Automation", "Tracking"]
-    }
+    },
+
 ];
 
 const Projects = () => {
