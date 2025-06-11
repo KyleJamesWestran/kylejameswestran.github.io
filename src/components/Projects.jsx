@@ -1,5 +1,5 @@
 import React from "react";
-import { FaMobile, FaRobot, FaGlobe, FaGithub, FaClock, FaServer } from "react-icons/fa";
+import { FaMobile, FaRobot, FaGlobe, FaGithub, FaClock, FaServer, FaPrint } from "react-icons/fa";
 import { FaComputer } from "react-icons/fa6";
 
 const projects = [
@@ -31,7 +31,7 @@ const projects = [
         links: {
             github: "https://github.com/KyleJamesWestran/Slinky",
         },
-        tags: ["Python", "FastAPI", "React", "Websockets", "Integration", "APIs", "serverless"]
+        tags: ["Python", "FastAPI", "React", "Websockets", "Integration", "APIs", "Serverless"]
     },
     {
         icon: <FaComputer />,
@@ -51,6 +51,16 @@ const projects = [
         links: {
         },
         tags: ["Flutter", "Dart", "SQL", "APIs", "Mobile", "Automation", "Tracking"]
+    },
+    {
+        icon: <FaPrint />,
+        title: "Report Print Engine",
+        description:
+            "The Report Print Engine is a specialized tool designed to automate the generation and printing of reports in PDF format. It uses a Store Procedure to fetch data from a table in a SQL database and generates a PDF report using devextreme xtra reports. This tool is particularly useful for businesses that require regular report generation, such as daily sales reports, inventory audits, or financial summaries. The engine can be integrated into existing systems to streamline reporting processes and reduce manual effort.",
+        links: {
+            github: "https://github.com/KyleJamesWestran/ReportPrintEngine",
+        },
+        tags: ["C#", "Dev Extreme", "Xtra Reports", "Reporting", "SQL", "Automation", "Windows Service"]
     },
 
 ];
