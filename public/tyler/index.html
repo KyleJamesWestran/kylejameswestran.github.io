@@ -245,7 +245,8 @@
                     confetti.style.animationDelay = Math.random() * 2 + 's';
                     document.body.appendChild(confetti);
                     
-                    setTimeout(() => confetti.remove(), 3000);
+                    // Remove confetti after animation completes
+                    confetti.addEventListener('animationend', () => confetti.remove());
                 }, i * 30);
             }
         }
