@@ -1,5 +1,5 @@
 /* eslint-disable no-restricted-globals */
-const CACHE_NAME = 'dadbod-v1';
+const CACHE_NAME = 'dadbod-v2';
 const urlsToCache = [
   '/',
   '/index.html',
