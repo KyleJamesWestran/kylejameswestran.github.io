@@ -1,51 +1,75 @@
-/* eslint-disable no-restricted-globals */
-const CACHE_NAME = 'dadbod-v2';
-const urlsToCache = [
-  '/',
-  '/index.html',
-  '/static/js/main.chunk.js',
-  '/static/js/bundle.js',
-  '/manifest.json'
-];
+const CACHE_NAME = 'dadbod-v3';
 
-self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(urlsToCache).catch(() => {}))
-  );
-  self.skipWaiting();
-});
+// ── Install: skip waiting immediately ────────────────────────────────────────
+self.addEventListener('install', () => self.skipWaiting());
 
+// ── Activate: nuke old caches, claim clients ─────────────────────────────────
 self.addEventListener('activate', event => {
   event.waitUntil(
-    caches.keys().then(keys =>
-      Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))
-    )
+    caches.keys()
+      .then(keys => Promise.all(keys.map(k => caches.delete(k))))
+      .then(() => self.clients.claim())
   );
-  self.clients.claim();
 });
 
+// ── Fetch: network-first, fall back to cache ─────────────────────────────────
 self.addEventListener('fetch', event => {
   event.respondWith(
-    caches.match(event.request).then(response => response || fetch(event.request).catch(() => caches.match('/index.html')))
+    fetch(event.request)
+      .then(res => {
+        if (res && res.status === 200 && event.request.method === 'GET') {
+          const clone = res.clone();
+          caches.open(CACHE_NAME).then(c => c.put(event.request, clone));
+        }
+        return res;
+      })
+      .catch(() => caches.match(event.request))
   );
 });
 
-self.addEventListener('push', event => {
-  const data = event.data ? event.data.json() : {};
-  const title = data.title || 'DadBod';
-  const options = {
-    body: data.body || "Time to get moving! 💪",
-    icon: '/icon-192.png',
-    badge: '/icon-192.png',
-    vibrate: [200, 100, 200],
-    tag: 'dadbod-reminder',
-    renotify: true,
-    data: { url: '/' }
-  };
-  event.waitUntil(self.registration.showNotification(title, options));
+// ── Alarm system ─────────────────────────────────────────────────────────────
+// App sends alarms via postMessage. SW fires them at the right local time.
+// Each alarm: { id, fireAt (ms timestamp), title, body, repeat: 'daily' | null }
+let alarms = [];
+
+function checkAlarms() {
+  const now = Date.now();
+  alarms.forEach(alarm => {
+    if (alarm.fireAt <= now) {
+      self.registration.showNotification(alarm.title, {
+        body: alarm.body,
+        icon: '/dadbod/icon-192.png',
+        badge: '/dadbod/icon-192.png',
+        vibrate: [200, 100, 200],
+        tag: alarm.id,
+        renotify: true,
+      });
+      if (alarm.repeat === 'daily') {
+        alarm.fireAt += 24 * 60 * 60 * 1000;
+      } else {
+        alarms = alarms.filter(a => a.id !== alarm.id);
+      }
+    }
+  });
+}
+
+// Check every 30 seconds
+setInterval(checkAlarms, 30000);
+
+// ── Message handler ───────────────────────────────────────────────────────────
+self.addEventListener('message', event => {
+  const { type, payload } = event.data || {};
+  if (type === 'SET_ALARMS') {
+    alarms = payload || [];
+    checkAlarms(); // fire immediately if overdue
+  }
+  if (type === 'CLEAR_ALARMS') {
+    alarms = [];
+  }
 });
 
+// ── Notification click ────────────────────────────────────────────────────────
 self.addEventListener('notificationclick', event => {
   event.notification.close();
-  event.waitUntil(clients.openWindow('/'));
+  event.waitUntil(clients.openWindow('/dadbod/'));
 });
