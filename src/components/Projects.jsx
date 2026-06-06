@@ -1,115 +1,63 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaMobile, FaRobot, FaGlobe, FaGithub, FaClock, FaServer, FaPrint } from "react-icons/fa";
 import { FaComputer } from "react-icons/fa6";
 
 const projects = [
-    
-    {
-        icon: <FaRobot />,
-        title: "Forkast",
-        description:
-            "Forkast is a machine learning platform tailored for predictive analytics in sales environments. It delivers actionable insights through advanced models that forecast customer purchasing behavior, product demand, and optimal stock levels. Developed in Python using Scikit-learn and a robust suite of data science tools, Forkast empowers businesses to make smarter inventory decisions and drive strategic growth. The platform features two core models. A classification model that predicts the probability of a customer placing an order on a given day, achieving an impressive 91% accuracy. Secondly a regression model that forecasts the expected order quantity, delivering a high level of precision with a mean absolute error of just 0.2 units.Together, these models support more accurate demand planning, reduce stockouts and overstocking, and help optimize the entire supply chain.",
-        links: {
-            github: "https://github.com/KyleJamesWestran/Forkast"
-        },
-        tags: ["Python", "Sklearn", "AI", "Machine Learning", "Numpy", "Pandas", "Predictive Models"]
-    },{
-        icon: <FaClock />,
-        title: "Timeframe",
-        description:
-            "Timeframe is a Micro-SaaS application designed to streamline the creation of school timetables. Traditionally, this process can take up to a month for a single institution. Timeframe leverages algorithmic logic and automation to generate conflict-free timetables in seconds. The backend is built with Python's FastAPI and hosted on Render, while the frontend is developed with React and deployed via Vercel.",
-        links: {
-            github: "https://github.com/KyleJamesWestran/Timeframe",
-            website: "https://timeframe-beta.vercel.app/"
-        },
-        tags: ["Python", "Algorithms", "AI", "React", "Render", "Vercel"]
-    },{
-        icon: <FaServer />,
-        title: "Slinky",
-        description:
-            "Slinky is a new project currently under production. When the project is complete, it will be a comprehensive platform designed to create simple, secure, and scalable APIs from data on your local machine. Turning your local data into secure and accessible APIs, Slinky will enable developers to build applications that can interact with local data seamlessly. The platform will feature a user-friendly interface for managing data sources, generating APIs, and ensuring secure access controls. Slinky aims to simplify the process of API creation, making it accessible for developers of all skill levels.",
-        links: {
-            github: "https://github.com/KyleJamesWestran/Slinky",
-        },
-        tags: ["Python", "FastAPI", "React", "Websockets", "Integration", "APIs", "Serverless"]
-    },
-    {
-        icon: <FaComputer />,
-        title: "DIMS",
-        description:
-            "DIMS (Designed Integrated Management System) is a web-based ERP integration platform tailored for logistics and warehouse operations. My contributions included the development and enhancement of key modules such as Route Optimization, Customer Specials, and Purchase Order Management. The system improves operational efficiency and provides robust automation across departments. Technologies used include PHP, Laravel, and SQL, with frontend enhancements through jQuery and DevExtreme, and cloud integration via Azure.",
-        links: {
-            website: "https://mydimsapp.com/"
-        },
-        tags: ["PHP", "Laravel", "SQL", "JQuery", "Dev Extreme", "AI", "Automation", "Azure"]
-    },
-    {
-        icon: <FaMobile />,
-        title: "iStoreIt",
-        description:
-            "iStoreIt is a mobile inventory management application built for warehouse environments. It supports real-time tracking of serialized stock, QR code scanning, and audit trail functionality. The app is designed to function offline and synchronize with central systems once reconnected, ensuring reliability in low-connectivity settings. Developed using Flutter and Dart, it interfaces seamlessly with backend APIs for robust data integrity and automation.",
-        links: {
-        },
-        tags: ["Flutter", "Dart", "SQL", "APIs", "Mobile", "Automation", "Tracking"]
-    },
-    {
-        icon: <FaPrint />,
-        title: "Report Print Engine",
-        description:
-            "The Report Print Engine is a specialized tool designed to automate the generation and printing of reports in PDF format. It uses a Store Procedure to fetch data from a table in a SQL database and generates a PDF report using devextreme xtra reports. This tool is particularly useful for businesses that require regular report generation, such as daily sales reports, inventory audits, or financial summaries. The engine can be integrated into existing systems to streamline reporting processes and reduce manual effort.",
-        links: {
-            github: "https://github.com/KyleJamesWestran/ReportPrintEngine",
-        },
-        tags: ["C#", "Dev Extreme", "Xtra Reports", "Reporting", "SQL", "Automation", "Windows Service"]
-    },
-
+  { icon: <FaRobot />, title: "Forkast", description: "A machine learning platform for predictive analytics in sales environments. Delivers actionable insights through advanced models forecasting customer purchasing behaviour, product demand, and optimal stock levels. Built in Python using Scikit-learn — a classification model achieving 91% accuracy and a regression model with a mean absolute error of just 0.2 units.", links: { github: "https://github.com/KyleJamesWestran/Forkast" }, tags: ["Python", "Sklearn", "AI", "Machine Learning", "Numpy", "Pandas"] },
+  { icon: <FaClock />, title: "Timeframe", description: "A Micro-SaaS application that streamlines school timetable creation. What traditionally takes up to a month is reduced to seconds using algorithmic logic. Built with FastAPI and React.", links: { github: "https://github.com/KyleJamesWestran/Timeframe", website: "https://timeframe-beta.vercel.app/" }, tags: ["Python", "Algorithms", "React", "FastAPI"] },
+  { icon: <FaServer />, title: "Slinky", description: "A platform for creating simple, secure, and scalable APIs from local machine data. Turning local data into secure accessible APIs for developers of all skill levels.", links: { github: "https://github.com/KyleJamesWestran/Slinky" }, tags: ["Python", "FastAPI", "React", "Websockets", "APIs"] },
+  { icon: <FaComputer />, title: "DIMS", description: "A web-based ERP integration platform for logistics and warehouse operations. Contributed key modules including Route Optimisation, Customer Specials, and Purchase Order Management using PHP Laravel and Azure.", links: { website: "https://mydimsapp.com/" }, tags: ["PHP", "Laravel", "SQL", "jQuery", "Azure"] },
+  { icon: <FaMobile />, title: "iStoreIt", description: "A mobile inventory management app for warehouse environments supporting real-time serialised stock tracking, QR scanning, and offline sync. Built with Flutter and Dart.", links: {}, tags: ["Flutter", "Dart", "SQL", "Mobile"] },
+  { icon: <FaPrint />, title: "Report Print Engine", description: "A tool automating PDF report generation from SQL stored procedures using DevExtreme XtraReports. Runs as a Windows service for scheduled reporting.", links: { github: "https://github.com/KyleJamesWestran/ReportPrintEngine" }, tags: ["C#", "DevExtreme", "SQL", "Automation"] },
 ];
 
 const Projects = () => {
-    return (
-        <section id="projects" className="p-8 min-h-screen m-10">
-            <h2 className="text-6xl font-bold mb-8 main-font">PROJECTS</h2>
-            <div className="flex flex-col gap-8">
-                {projects.map((project, index) => (
-                    <div key={index} className="bg-white border-2 border-gray-100 p-6 flex flex-col transition-all duration-300 ease-in-out hover:border-emerald-300">
-                        {/* Icon, Title, Description */}
-                        <div className="flex mb-4">
-                            <div className="text-4xl text-emerald-500 mr-4">
-                                {project.icon}
-                            </div>
-                            <div>
-                                <h3 className="text-xl font-semibold mb-1 main-font">{project.title}</h3>
-                                <p className="text-gray-700 main-font">{project.description}</p>
-                            </div>
-                        </div>
-
-                        {/* Links */}
-                        <div className="flex gap-4 mt-4">
-                            {project.links.github && (
-                                <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-gray-600 hover:text-black">
-                                    <FaGithub className="text-xl" /> GitHub
-                                </a>
-                            )}
-                            {project.links.website && (
-                                <a href={project.links.website} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-gray-600 hover:text-black">
-                                    <FaGlobe className="text-xl" /> Website
-                                </a>
-                            )}
-                        </div>
-
-                        {/* Tags */}
-                        <div className="flex flex-wrap gap-2 mt-4">
-                            {project.tags.map((tag, idx) => (
-                                <span key={idx} className="bg-emerald-500 text-white text-xs px-3 py-1 rounded-full">
-                                    {tag}
-                                </span>
-                            ))}
-                        </div>
-                    </div>
-                ))}
+  const [expanded, setExpanded] = useState(null);
+  return (
+    <section id="projects" className="px-4 md:px-10 py-16 min-h-screen">
+      <h2 className="text-4xl md:text-6xl font-bold mb-8 main-font">PROJECTS</h2>
+      <div className="flex flex-col gap-5">
+        {projects.map((project, index) => (
+          <div key={index} className="bg-white border-2 border-gray-100 p-5 flex flex-col transition-all duration-300 hover:border-emerald-300">
+            <div className="flex gap-4">
+              <div className="text-3xl text-emerald-500 flex-shrink-0 mt-1">{project.icon}</div>
+              <div className="flex-1 min-w-0">
+                <h3 className="text-lg font-semibold mb-1 main-font">{project.title}</h3>
+                <p className={`text-gray-700 main-font text-sm md:text-base ${expanded === index ? "" : "line-clamp-3"}`}>
+                  {project.description}
+                </p>
+                {project.description.length > 120 && (
+                  <button onClick={() => setExpanded(expanded === index ? null : index)}
+                    className="text-emerald-500 text-sm mt-1 main-font font-semibold">
+                    {expanded === index ? "Show less" : "Read more"}
+                  </button>
+                )}
+              </div>
             </div>
-        </section>
-    );
+            <div className="flex gap-4 mt-4 ml-10 md:ml-12">
+              {project.links.github && (
+                <a href={project.links.github} target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-gray-600 hover:text-black">
+                  <FaGithub className="text-lg" /> GitHub
+                </a>
+              )}
+              {project.links.website && (
+                <a href={project.links.website} target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-gray-600 hover:text-black">
+                  <FaGlobe className="text-lg" /> Website
+                </a>
+              )}
+            </div>
+            <div className="flex flex-wrap gap-2 mt-4 ml-10 md:ml-12">
+              {project.tags.map((tag, idx) => (
+                <span key={idx} className="bg-emerald-500 text-white text-xs px-2 py-1 rounded-full">{tag}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 };
 
 export default Projects;
