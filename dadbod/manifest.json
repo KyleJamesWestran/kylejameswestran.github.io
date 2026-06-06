@@ -6,10 +6,10 @@
     {"src": "/dadbod/icon-512.png", "type": "image/png", "sizes": "512x512", "purpose": "any maskable"}
   ],
   "start_url": "/dadbod/",
+  "scope": "/dadbod/",
   "display": "standalone",
   "theme_color": "#0f0f0f",
   "background_color": "#0f0f0f",
   "orientation": "portrait",
-  "description": "Your personal weight loss plan as a busy dad",
-  "scope": "/dadbod/"
+  "description": "Your personal weight loss plan as a busy dad"
 }
