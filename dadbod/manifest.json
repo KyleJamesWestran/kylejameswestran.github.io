@@ -2,28 +2,14 @@
   "short_name": "DadBod",
   "name": "DadBod",
   "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "icon-192.png",
-      "type": "image/png",
-      "sizes": "192x192",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "icon-512.png",
-      "type": "image/png",
-      "sizes": "512x512",
-      "purpose": "any maskable"
-    }
+    {"src": "/dadbod/icon-192.png", "type": "image/png", "sizes": "192x192", "purpose": "any maskable"},
+    {"src": "/dadbod/icon-512.png", "type": "image/png", "sizes": "512x512", "purpose": "any maskable"}
   ],
-  "start_url": ".",
+  "start_url": "/dadbod/",
   "display": "standalone",
-  "theme_color": "#1a1a2e",
-  "background_color": "#f9f6f1",
+  "theme_color": "#0f0f0f",
+  "background_color": "#0f0f0f",
   "orientation": "portrait",
-  "description": "Your personal weight loss plan as a busy dad"
+  "description": "Your personal weight loss plan as a busy dad",
+  "scope": "/dadbod/"
 }
