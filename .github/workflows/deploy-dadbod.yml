@@ -1,0 +1,44 @@
+name: Build and Deploy DadBod
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'dadbod/**'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: dadbod/package-lock.json
+
+      - name: Install dependencies
+        run: |
+          cd dadbod
+          npm ci
+
+      - name: Build
+        run: |
+          cd dadbod
+          CI=false npm run build
+        env:
+          PUBLIC_URL: /dadbod
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dadbod/build
+          destination_dir: dadbod
+          keep_files: true
