@@ -21,6 +21,8 @@ const DriftingBlobs = ({ color = "#fff" }) => (
           height: b.size,
           top: b.top,
           left: b.left,
+          marginTop: -(b.size / 2),
+          marginLeft: -(b.size / 2),
           background: `radial-gradient(circle, ${color} 0%, ${color} 35%, transparent 70%)`,
           animationDuration: `${b.duration}s`,
           animationDelay: b.delay,
