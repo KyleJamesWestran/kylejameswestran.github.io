@@ -39,7 +39,9 @@ const Navigation = () => {
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between px-6 md:px-10 py-4">
         <a href="#" className="flex items-center gap-2 main-font font-bold text-lg text-gray-800">
-          <span className="w-8 h-8 rounded-lg bg-emerald-500 text-white flex items-center justify-center text-sm">KW</span>
+          <span className="w-9 h-9 rounded-lg bg-white border border-gray-200 flex items-center justify-center overflow-hidden">
+            <img src="/kw.png" alt="Kyle Westran logo" className="w-6 h-6 object-contain" />
+          </span>
           <span className="hidden sm:inline">Kyle Westran</span>
         </a>
 
