@@ -4,9 +4,9 @@ import React from "react";
 // They sit above the dot pattern and below content, creating the illusion
 // of dots fading in/out as invisible "erasers" glide over them.
 const BLOBS = [
-  { size: 260, top: "8%", left: "12%", duration: 30, delay: "0s", drift: "drift-1" },
-  { size: 320, top: "45%", left: "68%", duration: 38, delay: "-8s", drift: "drift-2" },
-  { size: 220, top: "72%", left: "28%", duration: 26, delay: "-14s", drift: "drift-3" },
+  { size: 360, top: "8%", left: "10%", duration: 30, delay: "0s", drift: "drift-1" },
+  { size: 460, top: "45%", left: "78%", duration: 38, delay: "-8s", drift: "drift-2" },
+  { size: 320, top: "74%", left: "32%", duration: 26, delay: "-14s", drift: "drift-3" },
 ];
 
 const DriftingBlobs = ({ color = "#fff" }) => (
