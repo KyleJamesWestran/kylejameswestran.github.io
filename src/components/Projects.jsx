@@ -15,8 +15,8 @@ const projects = [
 const Projects = () => {
   const [expanded, setExpanded] = useState(null);
   return (
-    <section id="projects" className="w-full px-6 md:px-20 py-24 md:py-32 bg-white">
-      <Reveal>
+    <section id="projects" className="relative w-full px-6 md:px-20 py-24 md:py-32 bg-white overflow-hidden">
+      <div className="absolute inset-0 -z-10 bg-dots" />      <Reveal>
         <p className="main-font text-emerald-500 font-semibold tracking-widest uppercase text-sm mb-3">
           Selected work
         </p>
