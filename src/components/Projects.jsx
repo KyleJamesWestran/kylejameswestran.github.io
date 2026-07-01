@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaMobile, FaRobot, FaGlobe, FaGithub, FaClock, FaServer, FaPrint } from "react-icons/fa";
 import { FaComputer } from "react-icons/fa6";
 import Reveal from "../assets/components/Reveal";
+import DriftingBlobs from "../assets/components/DriftingBlobs";
 
 const projects = [
   { icon: <FaRobot />, title: "Forkast", description: "A machine learning platform for predictive analytics in sales environments. Delivers actionable insights through advanced models forecasting customer purchasing behaviour, product demand, and optimal stock levels. Built in Python using Scikit-learn — a classification model achieving 91% accuracy and a regression model with a mean absolute error of just 0.2 units.", links: { github: "https://github.com/KyleJamesWestran/Forkast" }, tags: ["Python", "Sklearn", "AI", "Machine Learning", "Numpy", "Pandas"] },
@@ -17,6 +18,7 @@ const Projects = () => {
   return (
     <section id="projects" className="relative isolate w-full px-6 md:px-20 py-24 md:py-32 bg-white overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-dots" />
+      <DriftingBlobs />
       <Reveal>
         <p className="main-font text-emerald-500 font-semibold tracking-widest uppercase text-sm mb-3">
           Selected work

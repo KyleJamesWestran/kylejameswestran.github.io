@@ -1,10 +1,12 @@
 import React from "react";
 import Reveal from "../assets/components/Reveal";
+import DriftingBlobs from "../assets/components/DriftingBlobs";
 
 const About = () => {
   return (
     <section id="about" className="relative isolate w-full px-6 md:px-20 py-24 md:py-32 flex flex-col md:flex-row items-center gap-14 md:gap-20 bg-white text-primary overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-dots" />
+      <DriftingBlobs />
       <Reveal className="w-full md:w-2/5 flex justify-center">
         <img src="/images/Kyle.png" alt="Kyle Westran"
           className="rounded-3xl w-56 h-auto md:w-full max-w-sm object-cover shadow-xl" />
