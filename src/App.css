@@ -96,8 +96,8 @@ html {
 }
 
 .bg-dots {
-  background-image: radial-gradient(rgba(15, 23, 42, 0.14) 1px, transparent 1px);
-  background-size: 14px 14px;
+  background-image: radial-gradient(rgba(15, 23, 42, 0.28) 1.25px, transparent 1.25px);
+  background-size: 12px 12px;
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 18%, #000 82%, transparent 100%);
   mask-image: linear-gradient(to bottom, transparent 0%, #000 18%, #000 82%, transparent 100%);
 }
