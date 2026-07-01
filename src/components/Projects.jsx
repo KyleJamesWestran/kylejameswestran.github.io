@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaMobile, FaRobot, FaGlobe, FaGithub, FaClock, FaServer, FaPrint } from "react-icons/fa";
 import { FaComputer } from "react-icons/fa6";
+import Reveal from "../assets/components/Reveal";
 
 const projects = [
   { icon: <FaRobot />, title: "Forkast", description: "A machine learning platform for predictive analytics in sales environments. Delivers actionable insights through advanced models forecasting customer purchasing behaviour, product demand, and optimal stock levels. Built in Python using Scikit-learn — a classification model achieving 91% accuracy and a regression model with a mean absolute error of just 0.2 units.", links: { github: "https://github.com/KyleJamesWestran/Forkast" }, tags: ["Python", "Sklearn", "AI", "Machine Learning", "Numpy", "Pandas"] },
@@ -14,46 +15,69 @@ const projects = [
 const Projects = () => {
   const [expanded, setExpanded] = useState(null);
   return (
-    <section id="projects" className="px-4 md:px-10 py-16 min-h-screen">
-      <h2 className="text-4xl md:text-6xl font-bold mb-8 main-font">PROJECTS</h2>
-      <div className="flex flex-col gap-5">
+    <section id="projects" className="w-full px-6 md:px-20 py-24 md:py-32 bg-white">
+      <Reveal>
+        <p className="main-font text-emerald-500 font-semibold tracking-widest uppercase text-sm mb-3">
+          Selected work
+        </p>
+        <h2 className="text-4xl md:text-6xl font-bold mb-4 main-font text-primary">Projects</h2>
+        <p className="main-font text-gray-500 text-base md:text-lg max-w-2xl mb-14">
+          A mix of client work, freelance builds, and personal projects spanning
+          machine learning, automation, and full-stack apps.
+        </p>
+      </Reveal>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {projects.map((project, index) => (
-          <div key={index} className="bg-white border-2 border-gray-100 p-5 flex flex-col transition-all duration-300 hover:border-emerald-300">
-            <div className="flex gap-4">
-              <div className="text-3xl text-emerald-500 flex-shrink-0 mt-1">{project.icon}</div>
-              <div className="flex-1 min-w-0">
-                <h3 className="text-lg font-semibold mb-1 main-font">{project.title}</h3>
-                <p className={`text-gray-700 main-font text-sm md:text-base ${expanded === index ? "" : "line-clamp-3"}`}>
-                  {project.description}
-                </p>
-                {project.description.length > 120 && (
-                  <button onClick={() => setExpanded(expanded === index ? null : index)}
-                    className="text-emerald-500 text-sm mt-1 main-font font-semibold">
-                    {expanded === index ? "Show less" : "Read more"}
-                  </button>
-                )}
+          <Reveal key={index} delay={index * 80}>
+            <div className="group h-full bg-white border border-gray-100 rounded-2xl p-6 md:p-7 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-emerald-200 transition-all duration-300 flex flex-col">
+              <div className="flex items-start gap-4 mb-3">
+                <div className="text-2xl text-emerald-500 bg-emerald-50 rounded-xl p-3 flex-shrink-0 group-hover:bg-emerald-100 transition-colors">
+                  {project.icon}
+                </div>
+                <div className="flex-1 min-w-0 pt-1">
+                  <h3 className="text-xl font-semibold main-font text-primary">{project.title}</h3>
+                </div>
               </div>
-            </div>
-            <div className="flex gap-4 mt-4 ml-10 md:ml-12">
-              {project.links.github && (
-                <a href={project.links.github} target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm text-gray-600 hover:text-black">
-                  <FaGithub className="text-lg" /> GitHub
-                </a>
+
+              <p className={`text-gray-600 main-font text-sm md:text-base leading-relaxed ${expanded === index ? "" : "line-clamp-3"}`}>
+                {project.description}
+              </p>
+              {project.description.length > 120 && (
+                <button onClick={() => setExpanded(expanded === index ? null : index)}
+                  className="text-emerald-600 text-sm mt-2 main-font font-semibold self-start hover:text-emerald-700">
+                  {expanded === index ? "Show less" : "Read more"}
+                </button>
               )}
-              {project.links.website && (
-                <a href={project.links.website} target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm text-gray-600 hover:text-black">
-                  <FaGlobe className="text-lg" /> Website
-                </a>
+
+              <div className="flex-1" />
+
+              <div className="flex flex-wrap gap-2 mt-5">
+                {project.tags.map((tag, idx) => (
+                  <span key={idx} className="border border-gray-200 text-gray-600 text-xs font-medium px-2.5 py-1 rounded-full main-font">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {(project.links.github || project.links.website) && (
+                <div className="flex gap-5 mt-5 pt-5 border-t border-gray-100">
+                  {project.links.github && (
+                    <a href={project.links.github} target="_blank" rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm text-gray-600 hover:text-emerald-600 main-font font-medium transition-colors">
+                      <FaGithub className="text-lg" /> GitHub
+                    </a>
+                  )}
+                  {project.links.website && (
+                    <a href={project.links.website} target="_blank" rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm text-gray-600 hover:text-emerald-600 main-font font-medium transition-colors">
+                      <FaGlobe className="text-lg" /> Website
+                    </a>
+                  )}
+                </div>
               )}
             </div>
-            <div className="flex flex-wrap gap-2 mt-4 ml-10 md:ml-12">
-              {project.tags.map((tag, idx) => (
-                <span key={idx} className="bg-emerald-500 text-white text-xs px-2 py-1 rounded-full">{tag}</span>
-              ))}
-            </div>
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>

@@ -9,6 +9,7 @@ import {
     FaFemale,
     FaChild
 } from "react-icons/fa";
+import Reveal from "../assets/components/Reveal";
 
 const events = [
     {
@@ -131,12 +132,15 @@ const Timeline = () => {
             </div>
 
             {/* Header with toggle side-by-side */}
-            <div className="relative z-10 flex justify-center items-center py-20 gap-6">
-                <h2 className="text-6xl font-bold main-font">TIMELINE</h2>
+            <Reveal className="relative z-10 flex flex-col items-center py-20 px-6 text-center">
+                <p className="main-font text-emerald-500 font-semibold tracking-widest uppercase text-sm mb-3">
+                    My journey
+                </p>
+                <h2 className="text-4xl md:text-6xl font-bold main-font mb-8">Timeline</h2>
 
-                <div className="flex items-center gap-2">
-                    <label htmlFor="toggle" className="font-semibold text-gray-700 select-none">
-                        Personal
+                <div className="flex items-center gap-3 bg-white rounded-full px-4 py-2 shadow-sm border border-gray-100">
+                    <label htmlFor="toggle" className="font-semibold text-gray-700 select-none main-font text-sm">
+                        Include personal milestones
                     </label>
                     <div className="relative w-14 h-8">
                         <input
@@ -150,7 +154,7 @@ const Timeline = () => {
                             aria-hidden="true"/>
                     </div>
                 </div>
-            </div>
+            </Reveal>
 
             {/* Main Content */}
             <div className="relative z-10 py-10 px-5 md:px-20">
@@ -161,22 +165,26 @@ const Timeline = () => {
                             date={event.date}
                             contentStyle={{
                             background: "oklch(43.2% 0.095 166.913)",
-                            color: "#000"
+                            color: "#000",
+                            borderRadius: "1rem",
+                            boxShadow: "0 10px 30px -10px rgba(0,0,0,0.25)"
                         }}
+                            contentArrowStyle={{ borderRight: "7px solid oklch(43.2% 0.095 166.913)" }}
                             iconStyle={{
                             background: "oklch(43.2% 0.095 166.913)",
-                            color: "#fff"
+                            color: "#fff",
+                            boxShadow: "0 0 0 4px #fff, 0 10px 20px -6px rgba(0,0,0,0.3)"
                         }}
                             icon={event.icon}>
                             <h3 className="text-2xl main-font font-semibold mb-2 text-white">{event.title}</h3>
-                            <p className="mb-4 text-white main-font">{event.details}</p>
+                            <p className="mb-4 text-white main-font leading-relaxed">{event.details}</p>
                             <div className="flex flex-wrap gap-2 pt-2">
                                 {event
                                     .tags
                                     .map((tag, i) => (
                                         <span
                                             key={i}
-                                            className="text-xs main-font font-semibold px-3 py-2 rounded-full bg-emerald-500 text-black">
+                                            className="text-xs main-font font-semibold px-3 py-1.5 rounded-full bg-white/15 text-white border border-white/20">
                                             {tag}
                                         </span>
                                     ))}
