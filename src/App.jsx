@@ -32,7 +32,8 @@ function App() {
         <Socials />
       </div>
 
-      <div className="flex items-center justify-center flex-col w-screen h-screen text-center px-6">
+      <div className="relative flex items-center justify-center flex-col w-screen h-screen text-center px-6 overflow-hidden hero-glow">
+        <div className="absolute inset-0 z-0 bg-grid" />
         <div className="absolute inset-0 z-0">
           <Raindrops />
         </div>
