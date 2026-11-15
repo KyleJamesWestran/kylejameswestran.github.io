@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Friendsmas Draw</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#12261c;color:#fff;display:flex;justify-content:center;padding:24px 16px}
+main{width:100%;max-width:420px;text-align:center}
+h1{font-size:28px;margin:8px 0 4px}
+p.sub{margin:0 0 22px;color:#b9d3c2;font-size:15px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+button{font:inherit;cursor:pointer;border:0;border-radius:14px}
+.name{padding:18px 8px;font-size:18px;font-weight:600;background:#1f4a35;color:#fff;border:2px solid #2f6b4c}
+.name:active{background:#2f6b4c}
+.card{background:#fff;color:#12261c;border-radius:18px;padding:28px 20px}
+.big{font-size:40px;font-weight:800;margin:10px 0 18px;color:#c0392b}
+.row{display:flex;gap:10px;justify-content:center}
+.row button{padding:12px 18px;font-size:16px;font-weight:600}
+.yes{background:#c0392b;color:#fff}.no{background:#e4e9e6;color:#12261c}
+.hide{background:#12261c;color:#fff;padding:12px 24px;font-size:16px;font-weight:600}
+.hidden{display:none}
+</style></head><body><main>
+<h1>🎁 Friendsmas Draw</h1>
+<p class="sub" id="sub">Tap your own name to see who you're giving to.</p>
+<div class="grid" id="grid"></div>
+<div class="card hidden" id="confirm">
+  <div>Are you</div><div class="big" id="cname" style="color:#12261c"></div>
+  <div style="margin-bottom:18px">Only continue if that's you.</div>
+  <div class="row"><button class="no" id="no">Go back</button><button class="yes" id="yes">Yes, that's me</button></div>
+</div>
+<div class="card hidden" id="reveal">
+  <div>You're giving a gift to</div><div class="big" id="target"></div>
+  <button class="hide" id="hide">Hide</button>
+</div>
+</main>
+<script>
+var D = {"Tyler": "S2F0ZQ==", "Kate": "S3lsZQ==", "Kyle": "RGFuaWVs", "Daniel": "TWFsYWNoaQ==", "Malachi": "Rmx5bm4=", "Flynn": "U2Ft", "Sam": "VHlsZXI="};
+var names = Object.keys(D);
+var grid = document.getElementById("grid"), conf = document.getElementById("confirm"),
+    rev = document.getElementById("reveal"), sub = document.getElementById("sub");
+var current = null;
+function show(which){
+  grid.classList.toggle("hidden", which!=="grid");
+  sub.classList.toggle("hidden", which!=="grid");
+  conf.classList.toggle("hidden", which!=="confirm");
+  rev.classList.toggle("hidden", which!=="reveal");
+}
+names.forEach(function(n){
+  var b = document.createElement("button");
+  b.className = "name"; b.textContent = n;
+  b.onclick = function(){ current = n; document.getElementById("cname").textContent = n; show("confirm"); };
+  grid.appendChild(b);
+});
+document.getElementById("no").onclick = function(){ current = null; show("grid"); };
+document.getElementById("yes").onclick = function(){
+  document.getElementById("target").textContent = atob(D[current]);
+  show("reveal");
+};
+document.getElementById("hide").onclick = function(){
+  document.getElementById("target").textContent = ""; current = null; show("grid");
+};
+</script></body></html>
